@@ -1,0 +1,220 @@
+.service-areas {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--gray-50);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-3xl);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  color: var(--gray-900);
+}
+
+.section-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--gray-600);
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.area-card {
+  background-color: var(--white);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.area-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--secondary-teal));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.area-card:hover::before {
+  opacity: 1;
+}
+
+.area-card[data-index="0"]:hover::before {
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-blue-light));
+}
+
+.area-card[data-index="1"]:hover::before {
+  background: linear-gradient(90deg, var(--secondary-teal), var(--secondary-teal-light));
+}
+
+.area-card[data-index="2"]:hover::before {
+  background: linear-gradient(90deg, var(--accent-orange), var(--accent-orange-light));
+}
+
+.area-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-lg);
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.area-card:hover .area-icon {
+  transform: scale(1.1);
+}
+
+.area-content {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.area-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--gray-900);
+}
+
+.area-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-md);
+}
+
+.area-coverage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  font-size: 0.875rem;
+}
+
+.coverage-label {
+  font-weight: 500;
+  color: var(--gray-500);
+}
+
+.coverage-areas {
+  color: var(--gray-700);
+  font-style: italic;
+}
+
+.area-action {
+  text-align: center;
+}
+
+.area-btn {
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid var(--gray-200);
+  cursor: pointer;
+}
+
+.area-btn:hover {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border-color: var(--primary-blue);
+  transform: translateY(-1px);
+}
+
+.service-areas-footer {
+  text-align: center;
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--gray-200);
+}
+
+.footer-text {
+  font-size: 1rem;
+  color: var(--gray-600);
+}
+
+.footer-link {
+  color: var(--primary-blue);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--primary-blue-dark);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .service-areas {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .areas-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .area-card {
+    padding: var(--spacing-xl);
+  }
+
+  .area-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .area-name {
+    font-size: 1.25rem;
+  }
+
+  .area-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .area-card {
+    padding: var(--spacing-lg);
+  }
+
+  .area-coverage {
+    text-align: left;
+  }
+
+  .area-btn {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+}
